@@ -3,82 +3,115 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class GUI extends JFrame{
+	private static final long serialVersionUID = 2L;
 	Container c;
-	//test
-	TextField tfFa, tfFb;
-	private Label lbOperation, lbGleich, lbErg;
-	JButton btnPlus, btnMinus, btnMul, btnDiv, btnClear;
-	private Character uebergabe= '+';
-	public GUI (){
-		class OperatorListener implements ActionListener {
-			Character uebergabe;
-			public OperatorListener(Character uebergabe){
-				this.uebergabe=uebergabe;
-			}
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				//test
-				System.out.println("test");
-				if (e.getSource().equals(btnPlus)){
-					lbErg.setText(""+(Double.parseDouble(tfFa.getText())+Double.parseDouble(tfFb.getText())));
-					lbOperation.setText("");
-				}
-				else if (e.getSource().equals(btnMinus)){
-					lbErg.setText(""+(Double.parseDouble(tfFa.getText())-Double.parseDouble(tfFb.getText())));		
-				}
-				else if (e.getSource().equals(btnMul)){
-					lbErg.setText(""+(Double.parseDouble(tfFa.getText())*Double.parseDouble(tfFb.getText())));	
-				}
-				else if (e.getSource().equals(btnDiv)){
-					lbErg.setText(""+(Double.parseDouble(tfFa.getText())/Double.parseDouble(tfFb.getText())));		
-				}
-				else if (e.getSource().equals(btnClear)){
-					tfFa.setText("");tfFb.setText("");lbOperation.setText("+");lbErg.setText("");	
-				}
-				//lbErg.setText(""+btnPlus.getMnemonic());
-				
-			}			
-		}
-		OperatorListener oList = new OperatorListener (uebergabe);
+	JTextField op1, op2;
+	JLabel op, gleich, erg;
+	JButton add, sub, mul, div, del;
+	
+	public GUI(){
 		c = getContentPane();
-		c.setLayout(new GridLayout(2,5));
-		tfFa = new TextField ("987.654");
-		c.add(tfFa);
-		lbOperation = new Label("+");
-		c.add(lbOperation);
-		tfFb = new TextField ("124");
-		c.add(tfFb);
-		lbGleich = new Label ("=");
-		c.add(lbGleich);
-		lbErg = new Label ("Erg");
-		c.add(lbErg);
-		btnPlus = new JButton ("Addiere");
-		btnMinus = new JButton ("Subtrahiere");
-		btnMul = new JButton ("Multipliziere");
-		btnDiv = new JButton ("Dividiere");
-		btnClear = new JButton ("Loesche alles");
-		c.add(btnPlus);
-		c.add(btnMinus);
-		c.add(btnMul);
-		c.add(btnDiv);
-		c.add(btnClear);
-		btnPlus.setMnemonic('+');
-		btnMinus.setMnemonic('-');
-		btnMul.setMnemonic('*');
-		btnDiv.setMnemonic('/');
-		btnClear.setMnemonic('1');
-		btnPlus.addActionListener(oList);
-		btnMinus.addActionListener(oList);
-		btnMul.addActionListener(oList);
-		btnDiv.addActionListener(oList);
-		btnClear.addActionListener(oList);
+		c.setLayout(new GridLayout(2,5,2,2));
 		
+		//Komponenten erstellen und einrichten
+		op1 = new JTextField();
+		op2 = new JTextField();
+		op = new JLabel();
+		gleich = new JLabel("=");
+		erg = new JLabel();
+		erg.setOpaque(true); //sonst wird der Hintergrund nicht sichtbar
+		erg.setBackground(Color.WHITE);
+		add = new JButton("Addiere");
+		sub = new JButton("Subtrahiere");
+		mul = new JButton("Multipliziere");
+		div = new JButton("Dividiere");
+		del = new JButton("Loesche alles");
+		
+		//ActionListener hinzufügen
+		OperatorListener olAdd = new OperatorListener('+');
+		OperatorListener olSub = new OperatorListener('-');
+		OperatorListener olMul = new OperatorListener('*');
+		OperatorListener olDiv = new OperatorListener('/');
+		OperatorListener olDel = new OperatorListener('l');
+		add.addActionListener(olAdd);
+		sub.addActionListener(olSub);
+		mul.addActionListener(olMul);
+		div.addActionListener(olDiv);
+		del.addActionListener(olDel);
+				
+		//Text horizontal zentrieren -> public static final int CENTER = 0
+		op.setHorizontalAlignment(0);
+		gleich.setHorizontalAlignment(0);
+		
+		//Komponenten ins Grid-Layout einfügen
+		c.add(op1);
+		c.add(op);
+		c.add(op2);
+		c.add(gleich);
+		c.add(erg);
+		c.add(add);
+		c.add(sub);
+		c.add(mul);
+		c.add(div);
+		c.add(del);
 	}
-	public static void main (String [] args){
-		GUI gui = new GUI();
-		gui.setSize(400,150);
-		gui.setTitle("Rechner");
-		gui.setVisible (true);
-		gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	
+	public static void main(String[] args){
+		//System.out.println("");
+		GUI f = new GUI();
+		f.setTitle("Rechner");
+		f.setSize(600,150);
+		f.setVisible(true);
+		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+	
+	class OperatorListener implements ActionListener{
+		char z;
+		
+		public OperatorListener(char z){
+			this.z = z;
+		}
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			//System.out.println(arg0.getActionCommand());
+			
+			if(z == 'l'){
+				op1.setText("");
+				op.setText("");
+				op2.setText("");
+				erg.setText("");
+			} else{
+				try{
+					double x = Double.parseDouble(op1.getText());
+					double y = Double.parseDouble(op2.getText());
+					op.setText(String.valueOf(z));
+					//char operand = arg0.getActionCommand().charAt(0);
+					
+					switch(z){
+					case '+':
+						erg.setText(String.valueOf(x+y));
+						break;
+					case '-':
+						erg.setText(String.valueOf(x-y));
+						break;
+					case '*':
+						erg.setText(String.valueOf(x*y));
+						break;
+					case '/':
+						if(y == 0.0){
+							throw new RuntimeException("Error (div 0)");
+						}
+						erg.setText(String.valueOf(x/y));
+						break;
+					}
+				}
+				catch(NumberFormatException nfe){
+					erg.setText("Error (nfe)");
+				}
+				catch(RuntimeException re){
+					erg.setText(re.getMessage());
+				}
+			}
+		}
 	}
 }
