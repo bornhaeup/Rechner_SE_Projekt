@@ -3,6 +3,15 @@
       <groupId>com.mycompany.app</groupId>
       <artifactId>Rechner_SE_Projekt</artifactId>
       <version>1</version>
+      <configuration>
+        <archive>
+          <manifest>
+            <addClasspath>true</addClasspath>
+            <classpathPrefix>lib/</classpathPrefix>
+            <mainClass>com.mypackage.MyClass</mainClass>
+          </manifest>
+        </archive>
+      </configuration>
       <packaging>jar</packaging>
       <name>Rechner_SE_Projekt</name>
 </project>
