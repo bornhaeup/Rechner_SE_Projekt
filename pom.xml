@@ -23,20 +23,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 		      
 		    </plugin>
 		    
-		    <plugin>
-		    <groupId>junit</groupId>
-				  <artifactId>junit</artifactId>
-		    <dependencies>
-	      		<dependency>
-				  <groupId>org.jenkins-ci.plugins</groupId>
-				  <artifactId>junit</artifactId>
-				  <version>4.12</version>
-				  <scope>compile</scope>
-				</dependency>
-		      </dependencies>
-		    </plugin>
-
-		  </plugins>		  
+		    </plugins>	  
 		</build>		
       <packaging>jar</packaging>
       <name>Rechner_SE_Projekt</name>
