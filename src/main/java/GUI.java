@@ -25,8 +25,8 @@ public class GUI extends JFrame{
 		c.setLayout(new GridLayout(2,5,2,2));
 		
 		//Komponenten erstellen und einrichten
-		op1 = new JTextField();
-		op2 = new JTextField();
+		op1 = new JTextField("Feld ändern");
+		op2 = new JTextField("Feld ändern");
 		op = new JLabel();
 		gleich = new JLabel("=");
 		erg = new JLabel();
