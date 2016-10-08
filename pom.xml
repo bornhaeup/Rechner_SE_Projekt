@@ -16,7 +16,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
           <manifest>
             <addClasspath>true</addClasspath>
             <classpathPrefix>lib/</classpathPrefix>
-            <mainClass>com.main.java.GUI.class</mainClass>
+            <mainClass>main.java.GUI</mainClass>
           </manifest>
         </archive>
       </configuration>
