@@ -76,6 +76,10 @@ public class GUI extends JFrame{
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
+	public double addition (double a, double b){		
+		return a+b;
+	}
+	
 	class OperatorListener implements ActionListener{
 		char z;
 		
