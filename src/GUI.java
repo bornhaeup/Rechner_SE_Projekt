@@ -74,7 +74,6 @@ public class GUI extends JFrame{
 		public OperatorListener(char z){
 			this.z = z;
 		}
-		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			//System.out.println(arg0.getActionCommand());
 			
