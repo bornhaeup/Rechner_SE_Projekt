@@ -11,8 +11,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-
-
 public class GUI extends JFrame{
 	private static final long serialVersionUID = 2L;
 	Container c;
