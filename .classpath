@@ -12,6 +12,5 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="lib" path="lib/junit.jar"/>
-	<classpathentry kind="output" path="target/classes"/>
+	<classpathentry kind="lib" path="/home/patrickg3/.p2/pool/plugins/org.junit_4.12.0.v201504281640/junit.jar"/>	<classpathentry kind="output" path="target/classes"/>
 </classpath>
