@@ -7,7 +7,7 @@ import javax.swing.*;
 public class GUI extends JFrame{
 	private static final long serialVersionUID = 2L;
 	Container c;
-	//test
+	//test2
 	JTextField op1, op2;
 	JLabel op, gleich, erg;
 	JButton add, sub, mul, div, del;
