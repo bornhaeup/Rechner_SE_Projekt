@@ -1,6 +1,9 @@
+package main;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+
+
 
 public class GUI extends JFrame{
 	private static final long serialVersionUID = 2L;
