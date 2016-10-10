@@ -98,7 +98,7 @@ public class GUI extends JFrame{
 					double y = Double.parseDouble(op2.getText());
 					op.setText(String.valueOf(z));
 					//char operand = arg0.getActionCommand().charAt(0);
-					
+					//test
 					switch(z){
 					case '+':
 						erg.setText(String.valueOf(x+y));
