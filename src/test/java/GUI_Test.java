@@ -1,8 +1,6 @@
 package test.java;
-import static org.junit.Assert.*;
-
+import static org.junit.Assert.assertEquals;
 import org.junit.Test;
-
 import main.java.GUI;
 
 public class GUI_Test {
