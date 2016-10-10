@@ -28,11 +28,12 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 			    <version>2.19.1</version>
 			    <dependencies>
 			      <dependency>
-			        <groupId>org.apache.maven.surefire</groupId>
-			        <artifactId>surefire-junit47</artifactId>
-			        <version>2.19.1</version>
-			      </dependency>
-			    </dependencies>
+					  <groupId>junit</groupId>
+					  <artifactId>junit</artifactId>
+					  <version>4.11</version>
+					  <scope>test</scope>
+					</dependency>
+				</dependencies>
 			  </plugin>
 		    </plugins>	  
 		</build>		
