@@ -21,7 +21,7 @@ public class GUI extends JFrame{
 	public GUI(){
 		c = getContentPane();
 		c.setLayout(new GridLayout(2,5,2,2));
-		
+		//test
 		//Komponenten erstellen und einrichten
 		op1 = new JTextField(123);
 		op2 = new JTextField(456);
