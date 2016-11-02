@@ -21,7 +21,6 @@ public class GUI extends JFrame{
 	public GUI(){
 		c = getContentPane();
 		c.setLayout(new GridLayout(2,5,2,2));
-//asdf
 		op2 = new JTextField(456);
 		op = new JLabel();
 		gleich = new JLabel("=");
