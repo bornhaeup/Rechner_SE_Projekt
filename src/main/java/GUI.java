@@ -34,6 +34,7 @@ public class GUI extends JFrame{
 		del = new JButton("Loesche alles");
 		op1 = new JTextField (500);
 		
+		//
 		//ActionListener hinzufügen
 		OperatorListener olAdd = new OperatorListener('+');
 		OperatorListener olSub = new OperatorListener('-');
