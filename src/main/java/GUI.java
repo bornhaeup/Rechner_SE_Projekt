@@ -33,6 +33,7 @@ public class GUI extends JFrame{
 		div = new JButton("Dividiere");
 		del = new JButton("Loesche alles");
 		
+		// Hello world
 		//ActionListener hinzufügen
 		OperatorListener olAdd = new OperatorListener('+');
 		OperatorListener olSub = new OperatorListener('-');
