@@ -21,7 +21,7 @@ public class GUI extends JFrame{
 	public GUI(){
 		c = getContentPane();
 		c.setLayout(new GridLayout(2,5,2,2));
-		op2 = new JTextField(456);
+		op2 = new JTextField("132");				//!!!!!!!!!!!
 		op = new JLabel();
 		gleich = new JLabel("=");
 		erg = new JLabel();
@@ -32,7 +32,7 @@ public class GUI extends JFrame{
 		mul = new JButton("Multipliziere");
 		div = new JButton("Dividiere");
 		del = new JButton("Loesche alles");
-		op1 = new JTextField (500);
+		op1 = new JTextField ("");					//!!!!!!!!!!1
 		
 		//
 		//ActionListener hinzufügen
