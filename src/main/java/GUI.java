@@ -32,8 +32,8 @@ public class GUI extends JFrame{
 		mul = new JButton("Multipliziere");
 		div = new JButton("Dividiere");
 		del = new JButton("Loesche alles");
+		op1 = new JTextField (500);
 		
-		// Hello world
 		//ActionListener hinzufügen
 		OperatorListener olAdd = new OperatorListener('+');
 		OperatorListener olSub = new OperatorListener('-');
