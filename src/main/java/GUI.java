@@ -26,7 +26,7 @@ public class GUI extends JFrame{
 		gleich = new JLabel("=");
 		erg = new JLabel();
 		erg.setOpaque(true); //sonst wird der Hintergrund nicht sichtbar
-		erg.setBackground(Color.WHITE);
+		erg.setBackground(Color.WHITE);//
 		add = new JButton("Addiere");
 		sub = new JButton("Subtrahiere");
 		mul = new JButton("Multipliziere");
